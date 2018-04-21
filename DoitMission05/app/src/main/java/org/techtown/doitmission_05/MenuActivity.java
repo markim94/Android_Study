@@ -4,7 +4,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class MenuActivity extends AppCompatActivity {
-    static final CODE
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
