@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:gravity="center">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <EditText
+            android:id="@+id/edittext1"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:hint="아이디"/>
+
+        <EditText
+            android:id="@+id/edittext2"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:hint="비밀번호" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button1"
+        android:text="로그인"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:onClick="onButton1Clicked"/>
+    
+</LinearLayout>
+
+
