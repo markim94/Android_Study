@@ -1,9 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="org.techtown.doitmission_06.MenuActivity">
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
 
-</android.support.constraint.ConstraintLayout>
+    <Button
+        android:id="@+id/button2"
+        android:text="고객 관리"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:onClick="onButton2Clicked"/>
+
+    <Button
+        android:id="@+id/button3"
+        android:text="매출 관리"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:onClick="onButton3Clicked"/>
+
+    <Button
+        android:id="@+id/button4"
+        android:text="상품 관리"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:onClick="onButton4Clciked"/>
+
+
+
+
+</LinearLayout>
