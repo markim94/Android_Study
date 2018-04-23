@@ -14,14 +14,15 @@ public class serve01Activity extends AppCompatActivity {
         setContentView(R.layout.activity_serve01);
     }
 
-    public void onButton5Clicked(View v){
-
+    public void onButton1Clicked(View v){
         Intent intent = new Intent();
         setResult(RESULT_OK, intent);
+
         finish();
+
     }
 
-    public void onButton6Clicked(View v){
+    public void onButton2Clicked(View v){
         Intent loginIntent = new Intent(getApplicationContext(), MainActivity.class);
         startActivityForResult(loginIntent, REQUEST_CODE_MAIN_01);
     }

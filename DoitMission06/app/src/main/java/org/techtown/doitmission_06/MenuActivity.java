@@ -20,7 +20,6 @@ public class MenuActivity extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), serve01Activity.class);
         startActivityForResult(intent, REQUEST_CODE_SERVE_1);
 
-        finish();
     }
 
 
@@ -28,7 +27,6 @@ public class MenuActivity extends AppCompatActivity {
         Intent newIntent = new Intent(getApplicationContext(), serve02Activity.class);
         startActivityForResult(newIntent, REQUEST_CODE_SERVE_2);
 
-        finish();
     }
 
 
@@ -36,7 +34,6 @@ public class MenuActivity extends AppCompatActivity {
         Intent newnewIntent = new Intent(getApplicationContext(), serve03Activity.class);
         startActivityForResult(newnewIntent, REQUEST_CODE_SERVE_3);
 
-        finish();
     }
 
 

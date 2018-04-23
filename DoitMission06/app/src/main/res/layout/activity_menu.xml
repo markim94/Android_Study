@@ -21,13 +21,13 @@
         android:layout_marginTop="30dp"
         android:onClick="onButton3Clicked"/>
 
-    <Button
+    <Buttonddd
         android:id="@+id/button4"
         android:text="상품 관리"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:onClick="onButton4Clciked"/>
+        android:onClick="onButton4Clicked"/>
 
 
 

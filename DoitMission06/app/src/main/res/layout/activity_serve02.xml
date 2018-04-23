@@ -6,18 +6,18 @@
     android:gravity="center_horizontal">
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/button1"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:text="메뉴로"
         android:layout_marginTop="100dp"
-        android:onClick="onButton7Clicked"/>
+        android:onClick="onButton1Clicked"/>
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/button2"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:text="로그인으로"
         android:layout_marginTop="100dp"
-        android:onClick="onButton8Clicked"/>
+        android:onClick="onButton2Clicked"/>
 </LinearLayout>
