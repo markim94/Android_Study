@@ -6,8 +6,6 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
 
-import static java.sql.DriverManager.println;
-
 public class MainActivity extends AppCompatActivity {
     TextView textView;
 
