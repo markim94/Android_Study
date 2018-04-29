@@ -8,9 +8,13 @@
         />
 
     <item
+        android:state_focused="false"
+        android:state_pressed="true"
+        android:drawable="@drawable/red"/>
+
+    <item
         android:drawable="@drawable/blue"
         />
-
 
 
 </selector>
