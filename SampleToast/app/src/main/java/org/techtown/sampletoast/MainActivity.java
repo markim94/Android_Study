@@ -1,5 +1,6 @@
 package org.techtown.sampletoast;
 
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -56,6 +57,10 @@ public class MainActivity extends AppCompatActivity {
 
         toast.setView(layout);
         toast.show();
+    }
+
+    public void onButton3Clicked(View v){
+        Snackbar.make(v,"스낵바입니다",Snackbar.LENGTH_LONG).show();
     }
 
 
