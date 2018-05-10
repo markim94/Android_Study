@@ -1,4 +1,4 @@
-package org.techtown.samplelistview;
+package org.techtown.gridview;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.EditText;
+import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -14,10 +15,10 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     EditText editText;
-    ListView listView;
+    GridView gridView;
     SingerAdapter adapter;
 
-    class SingerAdapter extends BaseAdapter{
+    class SingerAdapter extends BaseAdapter {
         ArrayList<SingerItem> items = new ArrayList<SingerItem>();
 
         @Override
@@ -58,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        listView = (ListView) findViewById(R.id.listView);
+        gridView = (GridView) findViewById(R.id.gridView);
 
         adapter = new SingerAdapter();
 
@@ -68,9 +69,11 @@ public class MainActivity extends AppCompatActivity {
         adapter.addItem(new SingerItem("티아라", "010-1000-1000", 24, R.drawable.singer4));
         adapter.addItem(new SingerItem("AOA", "010-1000-1000", 25, R.drawable.singer5));
 
-        listView.setAdapter(adapter);
+        gridView.setAdapter(adapter);
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        editText = (EditText) findViewById(R.id.editText);
+
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 SingerItem item =(SingerItem) adapter.getItem(position);
@@ -79,3 +82,5 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 }
+
+
