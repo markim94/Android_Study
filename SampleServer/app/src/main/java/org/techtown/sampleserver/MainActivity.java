@@ -24,12 +24,16 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                //이 부분을 서비스의 onCreate()에 넣음, 대신 버튼 클릭시 intent로 서비스를 실행하도록 함
                 ServerThread thread = new ServerThread();
                 thread.start();
             }
         });
     }
 
+
+    //서버쓰레드 클래스를 서비스의 클래스로 자리를 바꿈
     class ServerThread extends Thread {
         public void run() {
             int port = 5001;
