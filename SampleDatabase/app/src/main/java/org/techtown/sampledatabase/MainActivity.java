@@ -107,15 +107,17 @@ public class MainActivity extends AppCompatActivity {
     public void createTable(String tableName){
         println("createTable() 호출됨");
 
-        if (database !=null) {
-            // db가 먼저 생성되어야 하므로 체크하는 것이 좋음.
-            String sql = "create table " + tableName + "(_id integer PRIMARY KEY autoincrement, name text, age integer, mobile text)" ; // sql문 작성
-            database.execSQL(sql); //결과값을 받지 않으려면 execSQL메소드 사용
-            println("테이블 생성됨.");
+        try {
+            if (database != null) {
+                // db가 먼저 생성되어야 하므로 체크하는 것이 좋음.
+                String sql = "create table " + tableName + "(_id integer PRIMARY KEY autoincrement, name text, age integer, mobile text)"; // sql문 작성
+                database.execSQL(sql); //결과값을 받지 않으려면 execSQL메소드 사용
+                println("테이블 생성됨.");
 
-        } else {
-            println("먼저 데이터베이스를 오픈하세요.");
-        }
+            } else {
+                println("먼저 데이터베이스를 오픈하세요.");
+            }
+        } catch (Exception e){}
     }
 
 
