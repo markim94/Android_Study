@@ -29,7 +29,7 @@
 
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyDDL1A5Ceu_dCxuMIRAo_z2C_nbtDVtjRQ"/>
+            android:value="api key 값을 넣는곳"/>
 
         <meta-data
             android:name="com.google.android.gms.version"
