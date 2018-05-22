@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">SampleWall</string>
+    <string name="facebook_app_id">appid값 넣는곳</string>
+    <string name="fb_login_protocol_scheme">프로토콜</string>
+</resources>
