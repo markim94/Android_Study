@@ -2,6 +2,12 @@ package org.techtown.blogcustomlistview;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.ListView;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -9,5 +15,74 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ListView listView = (ListView) findViewById(R.id.listView); //리스트뷰 객체 참조
+
+
+        // 어댑터 지정
+        ListViewAdapter adapter = new ListViewAdapter();
+        adapter.addItem(new ListItem("홍길동", "010-1234-1234"));
+        adapter.addItem(new ListItem("김길동", "010-1234-1234"));
+        adapter.addItem(new ListItem("이길동", "010-1234-1234"));
+        adapter.addItem(new ListItem("류길동", "010-1234-1234"));
+        adapter.addItem(new ListItem("서길동", "010-1234-1234"));
+
+
+        listView.setAdapter(adapter);
+
+
+    }
+
+    class ListViewAdapter extends BaseAdapter {
+
+        ArrayList<ListItem> items = new ArrayList<ListItem>(); // 관리할 데이터
+        // 데이터를 담을 수 있는 별도의 객체가 필요. 리스트 아이템이 하나의 문자만 갖고 있는 것이 아니기에 ListItem.class를 따로 설정
+
+        @Override
+        public int getCount() {
+            // 리스트뷰 데이터가 몇 개인지 먼저 파악.
+            return items.size();
+        }
+
+        @Override
+        public Object getItem(int position) {
+            // position에 해당한 items 아이템을 get함
+            return items.get(position);
+        }
+
+        @Override
+        public long getItemId(int position) {
+            // 특정 id를 만들어 return해도 됨
+            return position;
+        }
+
+        // items arraylist에 item add
+        public void addItem(ListItem item){
+            items.add(item);
+        }
+
+        /**
+         * 데이터를 관리하는 어댑터가 화면에 보여질 각각의 아이템의 뷰도 만듬
+         * 이름이나 전화번호부, 이미지등이 화면에 표시되어지기 위해서 리턴되는 뷰는 레이아웃으로 구성되어야 함.
+         * 레이아웃으로 구성되어진 것을 부분화면으로 정의하고 그것을 이용해 객체를 만들어 리턴을 해주는 것이 가장 좋은 방법
+         * @param position
+         * @param convertView
+         * @param parent
+         * @return
+         */
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            ListItemView view = new ListItemView(getApplicationContext());
+
+            // 몇번째 인덱스에 관한 뷰의 정보를 넣어주어야
+            // item에 데이터가 들어있으므로 이를 가져와서 뷰에 정해주어야
+            ListItem item = items.get(position);
+            view.setName(item.getName());
+            view.setMobile(item.getMobile());
+
+            return view;
+
+        }
+
     }
 }
