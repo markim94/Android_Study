@@ -98,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
          * 데이터를 관리하는 어댑터가 화면에 보여질 각각의 아이템의 뷰도 만듬
          * 이름이나 전화번호부, 이미지등이 화면에 표시되어지기 위해서 리턴되는 뷰는 레이아웃으로 구성되어야 함.
          * 레이아웃으로 구성되어진 것을 부분화면으로 정의하고 그것을 이용해 객체를 만들어 리턴을 해주는 것이 가장 좋은 방법
+         * + 화면에 보여지는 뷰를 재사용하여 메모리 소모를 적절히 사용함 이때문에 convertview를 실무에서 사용
          * @param position
          * @param convertView
          * @param parent
@@ -106,6 +107,12 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             ListItemView view = new ListItemView(getApplicationContext());
+
+            if(convertView == null){
+                view = new ListItemView(getApplicationContext());
+            } else {
+                view = (ListItemView) convertView;
+            }
 
             // 몇번째 인덱스에 관한 뷰의 정보를 넣어주어야
             // item에 데이터가 들어있으므로 이를 가져와서 뷰에 정해주어야
