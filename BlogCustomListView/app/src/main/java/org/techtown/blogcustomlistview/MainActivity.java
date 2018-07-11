@@ -21,16 +21,15 @@ public class MainActivity extends AppCompatActivity {
 
         // 어댑터 지정
         ListViewAdapter adapter = new ListViewAdapter();
-        adapter.addItem(new ListItem("홍길동", "010-1234-1234"));
-        adapter.addItem(new ListItem("김길동", "010-1234-1234"));
-        adapter.addItem(new ListItem("이길동", "010-1234-1234"));
-        adapter.addItem(new ListItem("류길동", "010-1234-1234"));
-        adapter.addItem(new ListItem("서길동", "010-1234-1234"));
 
+        // items에 item 삽입
+        adapter.addItem(new ListItem("홍길동", "010-1234-1234", R.drawable.icon01));
+        adapter.addItem(new ListItem("김길동", "010-1234-1234", R.drawable.icon02));
+        adapter.addItem(new ListItem("이길동", "010-1234-1234", R.drawable.icon03));
+        adapter.addItem(new ListItem("류길동", "010-1234-1234", R.drawable.icon04));
+        adapter.addItem(new ListItem("서길동", "010-1234-1234", R.drawable.icon05));
 
         listView.setAdapter(adapter);
-
-
     }
 
     class ListViewAdapter extends BaseAdapter {
@@ -79,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
             ListItem item = items.get(position);
             view.setName(item.getName());
             view.setMobile(item.getMobile());
+            view.setImage(item.getResId());
 
             return view;
 

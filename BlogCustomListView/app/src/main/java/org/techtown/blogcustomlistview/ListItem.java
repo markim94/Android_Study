@@ -9,12 +9,14 @@ public class ListItem {
     // 이름과 전화번호 정보
     String name;
     String mobile;
+    int resId;
 
 
     // 생성자
-    public ListItem(String name, String mobile) {
+    public ListItem(String name, String mobile, int resId) {
         this.name = name;
         this.mobile = mobile;
+        this.resId = resId;
     }
 
     // 데이터에 직접 접근하지 말고, Getter and Setter 설정
@@ -34,6 +36,13 @@ public class ListItem {
         this.mobile = mobile;
     }
 
+    public int getResId() {
+        return resId;
+    }
+
+    public void setResId(int resId) {
+        this.resId = resId;
+    }
 
     // 객체의 정보를 toString()으로 출력
     @Override
