@@ -4,12 +4,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+    ListViewAdapter adapter;// 클릭리스너에서 사용하기 위해 밖에 꺼냄.
+    EditText editText1;
+    EditText editText2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,10 +24,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ListView listView = (ListView) findViewById(R.id.listView); //리스트뷰 객체 참조
-
+        editText1 = (EditText) findViewById(R.id.editText1);
+        editText2 = (EditText) findViewById(R.id.editText2);
 
         // 어댑터 지정
-        ListViewAdapter adapter = new ListViewAdapter();
+        adapter = new ListViewAdapter();
 
         // items에 item 삽입
         adapter.addItem(new ListItem("홍길동", "010-1234-1234", R.drawable.icon01));
@@ -30,6 +38,32 @@ public class MainActivity extends AppCompatActivity {
         adapter.addItem(new ListItem("서길동", "010-1234-1234", R.drawable.icon05));
 
         listView.setAdapter(adapter);
+
+
+        // 아이템 클릭 리스너
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                ListItem item = (ListItem) adapter.getItem(position);
+                Toast.makeText(getApplicationContext(), "선택 : "+ item.getName(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        Button button = (Button) findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String name = editText1.getText().toString();
+                String mobile = editText2.getText().toString();
+
+                adapter.addItem(new ListItem(name, mobile, R.drawable.icon01));
+                // 리스트뷰를 갱신하여야 하는데 이 메소드가 어댑터에서 리스트뷰쪽으로 갱신하라고 알려줌
+                adapter.notifyDataSetChanged();
+            }
+        });
+
+
+
     }
 
     class ListViewAdapter extends BaseAdapter {
