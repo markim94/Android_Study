@@ -13,6 +13,15 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+
+/**
+ * 1. list_item.xml 커스터마이징 레이아웃 구성
+ * 2. listitem의 데이터를 통합 관리할 자바 클래스, listitem (array로 관리할 데이터)
+ * 3. activity_main에 listview 태그 삽입
+ * 4. list_item.xml을 뷰로 띄우기 위해 listitemview에서 init() 초기화,
+ * 5. base 어댑터를 상속한 list어댑터, 어댑터
+ */
+
 public class MainActivity extends AppCompatActivity {
     ListViewAdapter adapter;// 클릭리스너에서 사용하기 위해 밖에 꺼냄.
     EditText editText1;
